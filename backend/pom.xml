@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>backend</name>
-	<description>ExpenseFlow Backend Scaffolding</description>
+	<description>ExpenseFlow Corporate Expense Management Backend</description>
 
 	<properties>
 		<java.version>17</java.version>
@@ -44,6 +44,12 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
