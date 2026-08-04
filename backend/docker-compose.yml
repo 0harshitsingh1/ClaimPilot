@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  expenseflow-db:
+    image: postgres:16
+    container_name: expenseflow-db
+    environment:
+      POSTGRES_DB: expenseflow_db
+      POSTGRES_USER: expenseflow_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - expenseflow_db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  expenseflow_db_data:
