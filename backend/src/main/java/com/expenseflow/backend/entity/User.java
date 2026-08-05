@@ -19,33 +19,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "full_name", nullable = false)
-    private String fullName;
-
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(name = "employee_code")
-    private String employeeCode;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
-
-    @ManyToOne
-    @JoinColumn(name = "manager_id")
-    private User manager;
-
-    @Column(name = "is_active", nullable = false)
+    @Column(nullable = false)
     @Builder.Default
-    private boolean isActive = true;
+    private boolean enabled = true;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -54,4 +40,6 @@ public class User {
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    private boolean isActive;
 }

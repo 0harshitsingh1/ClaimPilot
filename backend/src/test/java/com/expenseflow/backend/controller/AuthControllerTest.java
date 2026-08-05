@@ -51,9 +51,7 @@ class AuthControllerTest {
                     .email("admin@expenseflow.com")
                     .password(passwordEncoder.encode("Admin@123"))
                     .role(Role.ADMIN)
-                    .fullName("Test User")
-                .employeeCode("EMP001")
-                .isActive(true)
+                    .isActive(true)
                     .build());
         }
     }

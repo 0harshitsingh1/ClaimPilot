@@ -54,8 +54,6 @@ class AuthControllerIntegrationTest {
         refreshTokenRepository.deleteAll();
         userRepository.deleteAll();
         User user = User.builder()
-                .fullName("Test User")
-                .employeeCode("EMP-TEST")
                 .email(TEST_EMAIL)
                 .password(passwordEncoder.encode(TEST_PASSWORD))
                 .role(Role.EMPLOYEE)
