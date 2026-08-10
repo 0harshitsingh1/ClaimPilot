@@ -1,0 +1,1 @@
+ALTER TABLE department ADD COLUMN code VARCHAR(255);
