@@ -48,6 +48,7 @@ class AuthControllerTest {
         refreshTokenRepository.deleteAll();
         if (userRepository.findByEmail("admin@expenseflow.com").isEmpty()) {
             userRepository.save(User.builder()
+                    .fullName("Admin User")
                     .email("admin@expenseflow.com")
                     .password(passwordEncoder.encode("Admin@123"))
                     .role(Role.ADMIN)
