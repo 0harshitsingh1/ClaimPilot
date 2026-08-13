@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: expenseflow_user
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - expenseflow_db_data:/var/lib/postgresql/data
     restart: unless-stopped
