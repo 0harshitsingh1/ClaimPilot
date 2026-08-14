@@ -41,6 +41,9 @@ class AuthControllerIntegrationTest {
     private RefreshTokenRepository refreshTokenRepository;
 
     @Autowired
+    private com.expenseflow.backend.repository.ExpenseClaimRepository claimRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -52,6 +55,7 @@ class AuthControllerIntegrationTest {
     @BeforeEach
     void setUp() {
         refreshTokenRepository.deleteAll();
+        claimRepository.deleteAll();
         userRepository.deleteAll();
         User user = User.builder()
                 .fullName("Test User")
